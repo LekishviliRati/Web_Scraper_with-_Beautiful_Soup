@@ -5,4 +5,8 @@ source = requests.get("https://koesio-project.herokuapp.com/").text
 
 soup = BeautifulSoup(source, 'lxml')
 
-print(soup.prettify())
+article = soup.find('article')
+
+headline = article.h1.text
+
+print(headline)
